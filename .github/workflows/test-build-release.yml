@@ -5,6 +5,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".gitignore"
+      - ".github/**"
+      - "**.md"
+      - "LICENSE"
+      - "doc/**"
 
 jobs:
   test-job:
