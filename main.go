@@ -79,10 +79,10 @@ func showIdentityDetails(connection plugins.CliConnection, args []string) error 
 
 	var url string
 	var isType bool
-	if rawUrl, found := planMetadata["idb_url"]; !found {
-		return fmt.Errorf("unable to retrieve id-broker api rawUrl")
+	if rawUrl, found := planMetadata["idb_api"]; !found {
+		return fmt.Errorf("unable to find id-broker api rawUrl")
 	} else if url, isType = rawUrl.(string); !isType {
-		return fmt.Errorf("unable to retrieve id-broker api rawUrl")
+		return fmt.Errorf("unable to retrieve id-broker api url")
 	}
 
 	request, e := http.NewRequest(http.MethodGet, fmt.Sprintf("%s/api/info/%s", url, si.GUID), nil)
