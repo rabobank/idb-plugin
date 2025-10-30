@@ -11,8 +11,8 @@ import (
 	"code.cloudfoundry.org/cli/plugin"
 	"github.com/cloudfoundry/go-cfclient/v3/client"
 	plugins "github.com/rabobank/cf-plugins"
+	"github.com/rabobank/idb-plugin/cfg"
 	"gopkg.in/yaml.v3"
-	"idb-plugin/cfg"
 )
 
 type IdInfo struct {
@@ -73,7 +73,10 @@ func showIdentityDetails(connection plugins.CliConnection, args []string) error 
 	}
 
 	planMetadata := make(map[string]interface{})
-	json.Unmarshal(*plan.BrokerCatalog.Metadata, &planMetadata)
+	if e = json.Unmarshal(*plan.BrokerCatalog.Metadata, &planMetadata); e != nil {
+		return fmt.Errorf("could not parse id-broker api metadata: %s", e)
+	}
+
 	var url string
 	var isType bool
 	if rawUrl, found := planMetadata["idb_url"]; !found {

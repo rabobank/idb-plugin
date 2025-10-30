@@ -1,4 +1,4 @@
-module idb-plugin
+module github.com/rabobank/idb-plugin
 
 go 1.25.3
 
