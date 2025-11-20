@@ -4,7 +4,7 @@ go 1.25.3
 
 require (
 	code.cloudfoundry.org/cli v7.1.0+incompatible
-	github.com/cloudfoundry/go-cfclient/v3 v3.0.0-alpha.15
+	github.com/cloudfoundry/go-cfclient/v3 v3.0.0-alpha.16
 	github.com/rabobank/cf-plugins v0.0.2
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -18,7 +18,7 @@ require (
 	github.com/nxadm/tail v1.4.11 // indirect
 	github.com/oxtoacart/bpool v0.0.0-20190530202638-03653db5a59c // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/stretchr/testify v1.11.0 // indirect
+	github.com/stretchr/testify v1.11.1 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
 	golang.org/x/net v0.46.0 // indirect
 	golang.org/x/oauth2 v0.31.0 // indirect
